@@ -107,79 +107,9 @@ export default function App() {
 
   return (
     <main>
-      <div className='header'>
-        <h1 className='title'>Welcome to Subsocial Starter</h1>
-        <div className='connection-container'>
-          <div className='connection'>
-            You are{' '}
-            {isReady ? (
-              <Chip className='connection-chip' size='small' color='green'>
-                connected
-              </Chip>
-            ) : (
-              <Chip className='connection-chip' size='small' color='blue'>
-                connecting
-              </Chip>
-            )}{' '}
-            to Subsocial's {getNetworkName(network)}
-          </div>
-          <div className='connection'>
-            and the configuration can be seen in{' '}
-            <Chip className='connection-chip' size='small' color='blue'>
-              subsocial/config.ts
-            </Chip>
-            .
-          </div>
-        </div>
-        <p>
-          Check out our{' '}
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://docs.subsocial.network/docs/develop/'>
-            docs
-          </a>{' '}
-          and try the{' '}
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://play.subsocial.network/'>
-            Playground
-          </a>
-        </p>
+      <div className='bg-sky-100 h-screen w-screen flex items-center justify-center'>
+         <h1 className='text-8xl '>Subsocial Quick start</h1>
       </div>
-      <div className='button-container'>
-        <Button
-          isActive={!!space}
-          onClick={getSpace}
-          title='Fetch Space'
-          loadingText='Loading...'>
-          Fetch Space
-        </Button>
-        <Button
-          onClick={createSpace}
-          title='Create Space'
-          loadingText='Sending...'
-        />
-        <Button
-          onClick={toggleNetwork}
-          title='Toggle Network'
-          loadingText='Loading...'
-        />
-      </div>
-      {space ? (
-        <div>
-          <Space spaceData={space} />
-          <p className='space-full-response'>
-            Open the web developer console to see the full response.
-          </p>
-        </div>
-      ) : (
-        <div className='dev-console-notice'>
-          <img src='/rocket.png' alt='rocket' />
-          <p>Open the web developer console to see the response.</p>
-        </div>
-      )}
     </main>
   )
 }
